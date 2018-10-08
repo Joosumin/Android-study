@@ -29,7 +29,6 @@
         android:ems="10"
         android:hint="@string/input_loginId"
         android:inputType="textUri"
-        android:text="@string/input_loginId"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
