@@ -28,38 +28,32 @@ public class MainActivity extends AppCompatActivity {
                 int num1 = Integer.parseInt(editText_num1.getText().toString());
                 EditText editText_num2 = (EditText)findViewById(R.id.editText_num2);
                 int num2 = Integer.parseInt(editText_num2.getText().toString());
-                TextView result = (TextView)findViewById(R.id.result);
+                TextView textView_result = (TextView)findViewById(R.id.result);
+                int result;
 
                 switch(v.getId()){
                     case R.id.button_add:
-                        if(editText_num1.getText().length() == 0 || editText_num2.getText().length() == 0) {
-                            break;
-                        }
-                        else{
-                            result.setText(num1 + num2);
-                        }
-                    case R.id.button_sub:
-                        if(editText_num1.getText().length() == 0 || editText_num2.getText().length() == 0) {
-                            break;
-                        }
-                        else{
-                            result.setText(num1 - num2);
-                        }
-                    case R.id.button_mul:
-                        if(editText_num1.getText().length() == 0 || editText_num2.getText().length() == 0) {
-                            break;
-                        }
-                        else{
-                            result.setText(num1 * num2);
-                        }
-                    case R.id.button_div:
-                        if(editText_num1.getText().length() == 0 || editText_num2.getText().length() == 0 || editText_num1.getText().equals(0)) {
-                            break;
-                        }
-                        else{
-                            result.setText(num1 / num2);
-                        }
+                        result = num1 + num2;
+                        textView_result.setText(Integer.toString(result));
                         break;
+
+                    case R.id.button_sub:
+                        result = num1 - num2;
+                        textView_result.setText(Integer.toString(result));
+                        break;
+
+                    case R.id.button_mul:
+                        result = num1 * num2;
+                        textView_result.setText(Integer.toString(result));
+                        break;
+
+                    case R.id.button_div:
+                        result = num1 / num2;
+                        textView_result.setText(Integer.toString(result));
+                        break;
+
+                        default:
+                            textView_result.setText("숫자를 입력해주세요.");
                 }
             }
         };
