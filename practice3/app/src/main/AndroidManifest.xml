@@ -23,8 +23,9 @@
             android:name=".MemoActivity"
             android:label="@string/action_memo" />
         <activity
-            android:name=".ButtonsActivity"
-            android:label="@string/action_buttons" />
+            android:name=".CheckboxesActivity"
+            android:label="@string/action_checkboxes"></activity>
+
     </application>
 
 </manifest>
