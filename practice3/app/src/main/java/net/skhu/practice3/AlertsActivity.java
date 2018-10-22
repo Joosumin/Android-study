@@ -27,7 +27,7 @@ public class AlertsActivity extends AppCompatActivity {
         }
 
         public void button2_clicked(View button){
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            final AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle(R.string.confirm);
             builder.setMessage(R.string.doYouWantToDelete);
             builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
