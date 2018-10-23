@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:stretchColumns="1">
+
+    <TableRow>
+        <TextView
+            android:text="ID"/>
+        <EditText
+            android:hint="아이디를 입력하세요"
+            android:id="@+id/EditText"
+            android:imeOptions="actionGo"
+            android:inputType="text"
+            android:layout_span="2"
+            android:maxLines="1"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text="password"/>
+        <EditText
+            android:hint="비밀번호를 입력하세요" />
+    </TableRow>
+    <TableRow>
+        <Button
+            android:text="저장" />
+        <Button
+            android:text="취소" />
+    </TableRow>
+</TableLayout>
+
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="text"
+        android:id="@+id/b1"
+        android:textSize="20sp"
+        android:layout_alignParentRight="true"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="test2"
+        android:id="@+id/b2"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/b1"
+        android:layout_marginTop="20dp"
+        android:padding="20dp"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher_background"
+        />
+
