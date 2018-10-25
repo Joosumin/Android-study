@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         else if (id == R.id.action_memo){
-            Intent intent = new Intent(this, )
+            Intent intent = new Intent(this, MemoActivity.class);
+            startActivity(intent);
             return true;
         }
         else if (id == R.id.action_buttons){

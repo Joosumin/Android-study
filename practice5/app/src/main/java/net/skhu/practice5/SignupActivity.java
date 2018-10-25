@@ -15,7 +15,7 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-        Button button = (Button)findViewById(R.id.editText_loginId);
+        Button button = (Button)findViewById(R.id.button);
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -30,7 +30,7 @@ public class SignupActivity extends AppCompatActivity {
                     editText_password.setError("비밀번호를 입력하세요.");
 
                 EditText editText_password2 = (EditText)findViewById(R.id.editText_password2);
-                String password2 = (EditText)findViewById(R.id.editText_password2);
+                String password2 = editText_password2.getText().toString();
                 if (password.equals(password2) == false)
                     editText_password2.setError("비밀번호가 일치하지 않습니다.");
 

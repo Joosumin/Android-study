@@ -18,7 +18,9 @@
         </activity>
         <activity android:name=".SignupActivity" />
         <activity android:name=".ButtonActivity" />
-        <activity android:name=".MemoActivity"></activity>
+        <activity android:name=".MemoActivity" />
+        <activity android:name=".Main2Activity" />
+        <activity android:name=".CheckbosesActivity"></activity>
     </application>
 
 </manifest>
