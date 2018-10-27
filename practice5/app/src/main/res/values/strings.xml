@@ -22,4 +22,11 @@
     <string name="cat">고양이</string>
     <string name="dog">강아지</string>
     <string name="owl">부엉이</string>
+    <string name="action_checkboxes">CheckBoxes</string>
+    <string-array name="phoneTypes">
+        <item>집전화</item>
+        <item>사무실전화</item>
+        <item>휴대폰</item>
+        <item>기타</item>
+    </string-array>
 </resources>

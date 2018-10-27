@@ -20,7 +20,8 @@
         <activity android:name=".ButtonActivity" />
         <activity android:name=".MemoActivity" />
         <activity android:name=".Main2Activity" />
-        <activity android:name=".CheckbosesActivity"></activity>
+        <activity android:name=".CheckbosesActivity" />
+        <activity android:name=".SpinnersActivity"></activity>
     </application>
 
 </manifest>
