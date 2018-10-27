@@ -3,6 +3,7 @@
     <string name="action_signUp">회원가입</string>
     <string name="action_memo">메모장</string>
     <string name="action_buttons">버튼</string>
+    <string name="action_spinners">스피너</string>
     <string name="loginid">로그인 아이디</string>
     <string name="input_loginid">로그인 아이디를 입력하세요.</string>
     <string name="password">비밀번호</string>
@@ -23,6 +24,8 @@
     <string name="dog">강아지</string>
     <string name="owl">부엉이</string>
     <string name="action_checkboxes">CheckBoxes</string>
+    <string name="inputPhone">전화번호를 입력하세요.</string>
+    <string name="inputAddress">주소를 입력하세요.</string>
     <string-array name="phoneTypes">
         <item>집전화</item>
         <item>사무실전화</item>

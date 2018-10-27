@@ -16,12 +16,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignupActivity" />
-        <activity android:name=".ButtonActivity" />
-        <activity android:name=".MemoActivity" />
-        <activity android:name=".Main2Activity" />
-        <activity android:name=".CheckbosesActivity" />
-        <activity android:name=".SpinnersActivity"></activity>
+        <activity android:name=".SignupActivity"
+            android:label="@string/action_signUp" />
+        <activity android:name=".ButtonActivity"
+            android:label="@string/action_buttons" />
+        <activity android:name=".MemoActivity"
+            android:label="@string/action_memo" />
+        <activity android:name=".CheckbosesActivity"
+            android:label="@string/action_checkboxes" />
+        <activity android:name=".SpinnersActivity"
+            android:label="@string/action_spinners" />
     </application>
 
 </manifest>
