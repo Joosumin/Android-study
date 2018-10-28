@@ -23,7 +23,7 @@ public class CheckbosesActivity extends AppCompatActivity {
         CompoundButton.OnCheckedChangeListener listener1 = new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                String s = String.format("%s" : "%b", buttonView.getText(), isChecked);
+                String s = String.format("%s : %b", buttonView.getText(), isChecked);
                 Toast.makeText(CheckbosesActivity.this, s, Toast.LENGTH_SHORT).show();
             }
         };
@@ -34,7 +34,7 @@ public class CheckbosesActivity extends AppCompatActivity {
 
         RadioGroup.OnCheckedChangeListener listener2 = new RadioGroup.OnCheckedChangeListener(){
             @Override
-            public void OnCheckedChanged(RadioGroup group, int checkedId) {
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
                 RadioButton radioButton = (RadioButton) findViewById(checkedId);
                 String s = radioButton.getText().toString();
                 Toast.makeText(CheckbosesActivity.this, s, Toast.LENGTH_SHORT).show();
