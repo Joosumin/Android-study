@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "926620323804",
+    "firebase_url": "https://hellofirebase-38bcb.firebaseio.com",
+    "project_id": "hellofirebase-38bcb",
+    "storage_bucket": "hellofirebase-38bcb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:926620323804:android:b8eea192daa5ab34",
+        "android_client_info": {
+          "package_name": "net.skhu.practice3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "926620323804-78huj2cufqrknc4g61srj3b2p2obs8vk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWZjwHkZVuiJ0Y9-mIcofKWlPMXstGNug"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
