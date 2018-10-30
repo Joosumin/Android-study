@@ -22,7 +22,7 @@ public class SignupActivity extends AppCompatActivity {
                 EditText editText_loginId = (EditText)findViewById(R.id.editText_loginId);
                 String loginId = editText_loginId.getText().toString();
                 if(isEmptyOrWhiteSpace(loginId)){
-                    editText_loginId.setError("로그인 아이디를 입력하세요.")
+                    editText_loginId.setError("로그인 아이디를 입력하세요.");
                 }
 
                 EditText editText_password = (EditText)findViewById(R.id.editText_password);

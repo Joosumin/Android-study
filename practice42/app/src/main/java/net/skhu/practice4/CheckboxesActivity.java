@@ -23,7 +23,7 @@ public class CheckboxesActivity extends AppCompatActivity {
         CompoundButton.OnCheckedChangeListener listener1 = new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                String s = String.format("%s : %b", buttonView.getText(), isChecked);
+                String s = String.format("%s : %d", buttonView.getText(), isChecked);
                 Toast.makeText(CheckboxesActivity.this, s, Toast.LENGTH_SHORT).show();
             }
         };
