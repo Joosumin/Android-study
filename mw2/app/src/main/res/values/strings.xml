@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">mw2</string>
+    <string name="input_id">아이디를 입력해주세요.</string>
+    <string name="input_password">비밀번호를 입력해주세요.</string>
+</resources>

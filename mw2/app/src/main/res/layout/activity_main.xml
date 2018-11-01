@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이름:"
+        android:textSize="18sp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:paddingTop="15dp"
+        android:id="@+id/textView_name"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_toRightOf="@id/textView_password"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/struct"
+        />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="내용을 입력해주세요"
+        android:textSize="18sp"
+        android:layout_alignTop="@id/textView_name"
+        android:layout_toRightOf="@id/textView_name"
+        android:layout_alignLeft="@id/struct"
+        android:layout_alignParentRight="true"
+        android:id="@+id/editText_name"
+        android:inputType="text"
+        android:paddingLeft="10dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비밀번호:"
+        android:textSize="18sp"
+        android:paddingTop="20dp"
+        android:layout_alignLeft="@id/textView_name"
+        android:id="@+id/textView_password"
+        android:layout_below="@id/textView_name"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="비밀번호를 입력해주세요"
+        android:layout_below="@id/editText_name"
+        android:id="@+id/editText_password"
+        android:layout_alignParentRight="true"
+        android:layout_alignLeft="@id/editText_name"
+        android:inputType="textPassword" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="추가"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/editText_password"
+        android:id="@+id/button"/>
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView"
+        android:layout_below="@id/button"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>

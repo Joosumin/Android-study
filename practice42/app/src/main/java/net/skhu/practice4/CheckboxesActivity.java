@@ -1,6 +1,5 @@
 package net.skhu.practice4;
 
-import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
@@ -52,7 +51,7 @@ public class CheckboxesActivity extends AppCompatActivity {
                     case R.id.radioDog: mipmapId = R.mipmap.animal_dog_large; break;
                     case R.id.radioOwl: mipmapId = R.mipmap.animal_owl_large; break;
                 }
-                ImageView imageView1 = (ImageView)findViewById(R.id.imageView);
+                ImageView imageView1 = (ImageView)findViewById(R.id.imageView1);
                 imageView1.setImageResource(mipmapId);
             }
         };
