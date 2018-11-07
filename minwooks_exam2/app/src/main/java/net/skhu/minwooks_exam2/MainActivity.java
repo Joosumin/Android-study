@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, PICK_FROM_ALBUM);
                 mImageCaptureUri = intent.getData();
                 intent.setDataAndType(mImageCaptureUri, "image/*");
-                
+
                 /*
                 String url = "tmp_" + String.valueOf(System.currentTimeMillis() + ".jpg");
                 mImageCaptureUri = Uri.fromFile(new File(Environment.getExternalStorageDirectory(), uri));

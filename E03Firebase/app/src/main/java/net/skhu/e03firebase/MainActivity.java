@@ -1,6 +1,5 @@
 package net.skhu.e03firebase;
 
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -40,10 +39,10 @@ public class MainActivity extends AppCompatActivity {
         myData01.addValueEventListener(listener1);
 
         Button button = (Button)findViewById(R.id.btnSaveIntoServer);
+        final EditText editText = (EditText)findViewById(R.id.editText);
         View.OnClickListener listener2 = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText editText = (EditText)findViewById(R.id.editText);
                 String s = editText.getText().toString();
                 myData01.setValue(s);
             }
