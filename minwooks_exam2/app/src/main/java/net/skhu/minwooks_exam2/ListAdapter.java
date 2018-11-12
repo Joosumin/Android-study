@@ -23,15 +23,18 @@ public class ListAdapter extends ArrayAdapter<profile> {
     }
     public long getItemId(int position){ return 0; }
     public int getCount() { return arrayList.size(); }
+    public profile getItem(int position){
+        return arrayList.get(position);
+    }
     public View getView(int position, View convertView, ViewGroup parent){
         ViewHolder holder;
 
         if(convertView == null){
-            convertView = context.getLayoutInflater().inflate(R.layout.kakao, parent, false);
+            convertView = context.getLayoutInflater().inflate(R.layout.profile, parent, false);
 
             holder = new ViewHolder();
             holder.icon = (ImageView)convertView.findViewById(R.id.image);
-            holder.title = (TextView)convertView.findViewById(R.id.name);
+            holder.title = (TextView)convertView.findViewById(R.id.title);
             convertView.setTag(holder);
         }
         else{

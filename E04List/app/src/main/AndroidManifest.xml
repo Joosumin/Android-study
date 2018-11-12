@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="net.skhu.minwooks_exam2">
+    package="net.skhu.e04list">
 
     <application
         android:allowBackup="true"
@@ -16,7 +16,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".qwe"></activity>
     </application>
 
 </manifest>
