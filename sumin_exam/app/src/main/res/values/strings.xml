@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">sumin_exam</string>
+    <string name="WantButton">원하시는 버튼을 클릭하세요.</string>
+    <string name="intro_skhu">성공회대학교 소개</string>
+    <string name="intro_s.owl">S.Owl 동아리 소개</string>
+    <string name="intro_nutee">Nutee 동아리 소개</string>
 </resources>
