@@ -1,8 +1,11 @@
 package net.skhu.e05list;
 
+import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.view.LayoutInflater;
 import android.content.Context;
@@ -12,31 +15,36 @@ import java.util.ArrayList;
 
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
 
-    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    class ViewHolder extends RecyclerView.ViewHolder implements CompoundButton.OnCheckedChangeListener {
         TextView textView1, textView2;
+        CheckBox checkBox;
 
         public ViewHolder(View view){
             super(view);
-            textView1 = view.findViewById(R.id.textView1);
-            textView2 = view.findViewById(R.id.textView2);
-            view.setOnClickListener(this);
+            this.textView1 = view.findViewById(R.id.textView1);
+            this.textView2 = view.findViewById(R.id.textView2);
+            this.checkBox = view.findViewById(R.id.checkBox);
+            this.checkBox.setOnCheckedChangeListener(this);
         }
 
         public void setData(){
             Item item = arrayList.get(getAdapterPosition());
-            textView1.setText(item.getTitle());
-            textView2.setText(item.getCreateTimeFormatted());
+            this.textView1.setText(item.getTitle());
+            this.textView2.setText(item.getCreateTimeFormatted());
         }
 
-        public void onClick(View view){
+        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked){
             Item item = arrayList.get(super.getAdapterPosition());
-            String s = String.format("index: %d,    title: %s", super.getAdapterPosition(), item.getTitle());
-            Toast.makeText(view.getContext(), s, Toast.LENGTH_SHORT).show();
+            item.setChecked(isChecked);
+            if (isChecked) ++checkedItemCount; else --checkedItemCount;
+            if(checkedItemCount <= 1)
+                ((Activity)textView1.getContext()).invalidateOptionsMenu();
         }
     }
 
     LayoutInflater layoutInflater;
     ArrayList<Item> arrayList;
+    int checkedItemCount = 0;
 
     public MyRecyclerViewAdapter(Context context, ArrayList<Item> arrayList){
         this.layoutInflater = LayoutInflater.from(context);
