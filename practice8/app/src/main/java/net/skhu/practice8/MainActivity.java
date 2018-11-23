@@ -1,4 +1,4 @@
-package net.skhu.practice7;
+package net.skhu.practice8;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,15 +15,16 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     MyRecyclerViewAdapter myRecyclerViewAdapter;
-    ArrayList<String> arrayList;
+    ArrayList<Item> arrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        arrayList.add("One");
-        arrayList.add("Two");
+        arrayList = new ArrayList<Item>();
+        arrayList.add(new Item("One"));
+        arrayList.add(new Item("Two"));
 
         myRecyclerViewAdapter = new MyRecyclerViewAdapter(this, arrayList);
         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recycleView);
@@ -36,10 +37,10 @@ public class MainActivity extends AppCompatActivity {
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                EditText editText = (EditText)findViewById(R.id.editText);
-                String s = editText.getText().toString();
-                editText.setText("");
-                arrayList.add(s);
+                EditText e = (EditText)findViewById(R.id.editText);
+                String s = e.getText().toString();
+                e.setText("");
+                arrayList.add(new Item(s));
                 myRecyclerViewAdapter.notifyDataSetChanged();
             }
         });
