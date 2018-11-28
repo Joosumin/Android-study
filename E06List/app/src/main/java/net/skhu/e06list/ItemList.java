@@ -20,10 +20,28 @@ public class ItemList {
     }
 
     public int findIndex(String key){
-        for(int i = 0; i< keys.size(); i++){
+        for(int i = 0; i< keys.size(); i++)
             if(keys.get(i).equals(key))
                 return i;
             return -1;
-        }
+    }
+
+    public int remove(String key){
+        int index = findIndex(key);
+        keys.remove(index);
+        items.remove(index);
+        return index;
+    }
+
+    public int add(String key, Item item){
+        keys.add(key);
+        items.remove(item);
+        return items.size() - 1;
+    }
+
+    public int update(String key, Item item){
+        int index = findIndex(key);
+        items.set(index, item);
+        return index;
     }
 }

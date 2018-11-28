@@ -11,7 +11,6 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
@@ -29,14 +28,14 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         }
 
         public void setData(){
-            Item item = arrayList.get(super.getAdapterPosition());
+            Item item = itemList.get(super.getAdapterPosition());
             this.textView1.setText(item.getTitle());
             this.textView2.setText(item.getCreateTimeFormatted());
             this.checkBox.setChecked(item.isChecked());
         }
 
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked){
-            Item item = arrayList.get(super.getAdapterPosition());
+            Item item = itemList.get(super.getAdapterPosition());
             item.setChecked(isChecked);
             if(isChecked) ++checkedItemCount; else --checkedItemCount;
             if(checkedItemCount <= 1)
@@ -45,16 +44,16 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     }
 
     LayoutInflater layoutInflater;
-    List<Item> arrayList;
+    ItemList itemList;
     int checkedItemCount = 0;
 
-    public MyRecyclerViewAdapter(Context context, List<Item>arrayList){
+    public MyRecyclerViewAdapter(Context context, ItemList itemList){
         this.layoutInflater = LayoutInflater.from(context);
-        this.arrayList = arrayList;
+        this.itemList = itemList;
     }
 
     public int getItemCount(){
-        return arrayList.size();
+        return itemList.size();
     }
 
     @NonNull

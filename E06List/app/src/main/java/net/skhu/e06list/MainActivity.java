@@ -26,58 +26,37 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    ItemList itemList;
     MyRecyclerViewAdapter myRecyclerViewAdapter;
-    List<Item>arrayList;
-    DatabaseReference myServerData02;
+    FirebaseDbService firebaseDbService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        arrayList = new ArrayList<Item>();
-        arrayList.add(new Item("one"));
-        arrayList.add(new Item("two"));
+        itemList = new ItemList();
 
-        myRecyclerViewAdapter = new MyRecyclerViewAdapter(this, arrayList);
-        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
+        myRecyclerViewAdapter = new MyRecyclerViewAdapter(this, itemList);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(myRecyclerViewAdapter);
 
-        Button b = (Button)findViewById(R.id.btnAdd);
+        firebaseDbService = new FirebaseDbService(this, myRecyclerViewAdapter, itemList);
+
+        Button b = (Button) findViewById(R.id.btnAdd);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                EditText e = (EditText)findViewById(R.id.editText);
+                EditText e = (EditText) findViewById(R.id.editText);
                 String s = e.getText().toString();
                 e.setText("");
-                arrayList.add(new Item(s));
-                myServerData02.setValue(arrayList);
-                myRecyclerViewAdapter.notifyDataSetChanged();
+                Item item = new Item(s);
+                firebaseDbService.addIntoServer(item);
             }
         });
-
-        myServerData02 = FirebaseDatabase.getInstance().getReference("myServerData02");
-        ValueEventListener listener1 = new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                GenericTypeIndicator<List<Item>> typeIndicator = new GenericTypeIndicator<List<Item>>() {};
-                List<Item> temp = dataSnapshot.getValue(typeIndicator);
-                if(temp != null){
-                    arrayList.clear();
-                    arrayList.addAll(temp);
-                    myRecyclerViewAdapter.notifyDataSetChanged();
-                    Log.e("내태그", arrayList.toString());
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.e("내태그", "서버 에러: ", databaseError.toException());
-            }
-        };
-        myServerData02.addValueEventListener(listener1);
     }
 
     public boolean onCreateOptionsMenu(Menu menu){
@@ -89,11 +68,11 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         int id = item.getItemId();
         if(id == R.id.action_remove){
-            for(int i = arrayList.size() - 1; i >=0; --i)
-                if(arrayList.get(i).isChecked())
-                    arrayList.remove(i);
-            myServerData02.setValue(arrayList);
-            myRecyclerViewAdapter.notifyDataSetChanged();
+            for(int i = itemList.size() - 1; i >=0; --i)
+                if(itemList.get(i).isChecked()) {
+                    String key = itemList.getKey(i);
+                    firebaseDbService.removeFromServer(key);
+                }
             return true;
         }
         return super.onOptionsItemSelected(item);
