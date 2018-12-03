@@ -18,8 +18,17 @@ public class Item {
         this.createTime = new Date();
     }
 
+    public void setTitle(String title) { this.title = title; }
+
     public String getTitle() {
         return title;
+    }
+
+    public void setCreateTimeFormatted(String s){
+        try{
+            this.createTime = format.parse(s);
+        }catch (Exception e) {
+        }
     }
 
     public Date getCreateTime(){

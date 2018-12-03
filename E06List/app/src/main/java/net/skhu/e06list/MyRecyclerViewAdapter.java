@@ -15,7 +15,7 @@ import java.util.List;
 
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
 
-    class ViewHolder extends RecyclerView.ViewHolder implements CompoundButton.OnCheckedChangeListener{
+    class ViewHolder extends RecyclerView.ViewHolder implements CompoundButton.OnCheckedChangeListener, View.OnClickListener{
         TextView textView1, textView2;
         CheckBox checkBox;
 
@@ -25,6 +25,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             this.textView2 = view.findViewById(R.id.textView2);
             this.checkBox = view.findViewById(R.id.checkBox);
             this.checkBox.setOnCheckedChangeListener(this);
+            view.setOnClickListener(this);
         }
 
         public void setData(){
@@ -40,6 +41,11 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             if(isChecked) ++checkedItemCount; else --checkedItemCount;
             if(checkedItemCount <= 1)
                 ((Activity)textView1.getContext()).invalidateOptionsMenu();
+        }
+
+        public void onClick(View view){
+            MainActivity activity = (MainActivity)view.getContext();
+            activity.showItemEditDialog(super.getAdapterPosition());
         }
     }
 

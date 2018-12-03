@@ -19,6 +19,14 @@ public class ItemList {
         return keys.size();
     }
 
+    public int getCheckedCount(){
+        int count = 0;
+        for (int i = 0; i < items.size(); ++i)
+            if(items.get(i).isChecked())
+                ++count;
+        return count;
+    }
+
     public int findIndex(String key){
         for(int i = 0; i< keys.size(); i++)
             if(keys.get(i).equals(key))

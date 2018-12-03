@@ -44,14 +44,14 @@ public class FirebaseDbService implements ChildEventListener {
         String key = dataSnapshot.getKey();
         Item item = dataSnapshot.getValue(Item.class);
         int index = itemList.update(key, item);
-        myRecyclerViewAdapter.notifyItemInserted(index);
+        myRecyclerViewAdapter.notifyItemChanged(index);
     }
 
     @Override
     public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
         String key = dataSnapshot.getKey();
         int index = itemList.remove(key);
-        myRecyclerViewAdapter.notifyItemInserted(index);
+        myRecyclerViewAdapter.notifyItemRemoved(index);
     }
 
     @Override
