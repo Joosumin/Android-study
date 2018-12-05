@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">minwooks-study-12.04</string>
+    <string name="input_Id">아이디를 입력해주세요.</string>
+    <string name="login_Id">아이디</string>
+    <string name="input_password">비밀번호를 입력해주세요.</string>
+    <string name="password">비밀번호</string>
+    <string name="login">로그인</string>
+    <string name="sign">회원가입</string>
+    <string name="password2">비밀번호 확인</string>
+    <string name="input_password2">비밀번호를 한번 더 입력해주세요.</string>
+    <string name="overlap">중복체크</string>
+    <string name="nickname">별명</string>
+    <string name="input_nickname">별명을 입력해주세요.</string>
+    <string name="success_login">로그인 성공!</string>
+</resources>
