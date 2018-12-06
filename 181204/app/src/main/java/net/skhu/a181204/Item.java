@@ -37,4 +37,6 @@ public class Item {
     public String toString(){
         return String.format("(%s)", title);
     }
+
+    public void setChecked(boolean checked){ this.checked = checked; }
 }
