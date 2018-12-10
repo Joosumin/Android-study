@@ -1,55 +1,61 @@
 package net.skhu.e06list;
-
 import java.util.ArrayList;
 import java.util.List;
 
+// Item 객체의 목록과, firebase DB의 키(string) 목록을 관리하는 클래스
 public class ItemList {
     List<String> keys = new ArrayList<String>();
     List<Item> items = new ArrayList<Item>();
 
-    public Item get(int index){
+    // index 위치의 Item 객체를 리턴
+    public Item get(int index) {
         return items.get(index);
     }
 
-    public String getKey(int index){
+    // index 위치의 키 값을 리턴
+    public String getKey(int index) {
         return keys.get(index);
     }
-
-    public int size(){
+    // Item 객체의 수를 리턴
+    public int size() {
         return keys.size();
     }
 
-    public int getCheckedCount(){
+    // 체크된 Item 객체의 수를 리턴
+    public int getCheckedCount() {
         int count = 0;
         for (int i = 0; i < items.size(); ++i)
-            if(items.get(i).isChecked())
+            if (items.get(i).isChecked())
                 ++count;
         return count;
     }
 
-    public int findIndex(String key){
-        for(int i = 0; i< keys.size(); i++)
-            if(keys.get(i).equals(key))
+    // key 값의 index를 리턴
+    public int findIndex(String key) {
+        for (int i = 0; i < keys.size(); ++i)
+            if (keys.get(i).equals(key))
                 return i;
-            return -1;
+        return -1;
     }
 
-    public int remove(String key){
+    // key 값에 해당하는 Item 객체를 목록에서 제거
+    public int remove(String key) {
         int index = findIndex(key);
         keys.remove(index);
         items.remove(index);
         return index;
     }
 
-    public int add(String key, Item item){
+    // key 값과 Item 객체를 목록에 추가
+    public int add(String key, Item item) {
         keys.add(key);
-        items.remove(item);
+        items.add(item);
         return items.size() - 1;
     }
 
-    public int update(String key, Item item){
+    // key 값에 해당하는 Item 객체 변경
+    public int update(String key, Item item) {
         int index = findIndex(key);
         items.set(index, item);
-        return index;
-    }
+        return index; }
 }

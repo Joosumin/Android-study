@@ -15,20 +15,28 @@ public class FirebaseDbService implements ChildEventListener {
     MyRecyclerViewAdapter myRecyclerViewAdapter;
     ItemList itemList;
     DatabaseReference databaseReference;
+    String userId;
 
-    public FirebaseDbService(Context context, MyRecyclerViewAdapter myRecyclerViewAdapter, ItemList itemList){
+    public FirebaseDbService(Context context, MyRecyclerViewAdapter myRecyclerViewAdapter, ItemList itemList, String userId){
         this.myRecyclerViewAdapter = myRecyclerViewAdapter;
         this.itemList = itemList;
+        this.userId = userId;
         databaseReference = FirebaseDatabase.getInstance().getReference("myServerData02");
     }
 
     public void addIntoServer(Item item){
-        String key = databaseReference.push().getKey();
-        databaseReference.child(key).setValue(item);
+        String key = databaseReference.child(userId).push().getKey();
+        databaseReference.child(userId).child(key).setValue(item);
     }
 
     public void removeFromServer(String key){
-        databaseReference.child(key).removeValue();
+        databaseReference.child(userId).child(key).removeValue();
+    }
+
+    public void updateInServer(int index){
+        String key = itemList.getKey(index);
+        Item item = itemList.get(index);
+        databaseReference.child(userId).child(key).setValue(item);
     }
 
     @Override
