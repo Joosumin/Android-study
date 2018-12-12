@@ -61,15 +61,14 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_remove) {
-            for (int i = arrayList.size() - 1; i >= 0; --i) {
+            for (int i = arrayList.size() - 1; i >= 0; --i)
                 if (arrayList.get(i).isChecked())
                     arrayList.remove(i);
                 myRecyclerViewAdapter.notifyDataSetChanged();
                 return true;
             }
             return super.onOptionsItemSelected(item);
-        }
     }
-
+}
 
 
